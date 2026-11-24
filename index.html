@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f0e9">
+    <meta name="description" content="Thoughtfully made, beautifully fitted clothing and custom pieces by Mimshack Atelier.">
+    <title>Mimshack Atelier — Made to be remembered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Mimshack Atelier home">
+        <span class="wordmark-icon" aria-hidden="true">
+          <img src="img/mimshack-logo.png" alt="Mimshack Brand logo" width="350" height="auto">
+        </span>
+        <span>MIMSHACK <small>TAILOR</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span class="sr-only">Toggle navigation</span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a href="#collection">The collection</a>
+        <a href="#story">Our approach</a>
+        <a class="nav-cta" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> MADE WITH MEANING · MADE FOR YOU</p>
+          <h1>Made to be<br><em>remembered.</em></h1>
+          <p class="hero-intro">Clothes that feel like you. Thoughtfully sewn, beautifully fitted, and made for the moments that matter.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#collection">Explore the collection <span aria-hidden="true">↘</span></a>
+            <span class="hero-note">Custom fit. One-of-a-kind feeling.</span>
+          </div>
+          <div class="hero-stats">
+            <div><strong>Made</strong><span>with care</span></div>
+            <div><strong>Designed</strong><span>around you</span></div>
+            <div><strong>Worn</strong><span>your way</span></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="hero-image-frame">
+            <img src="img/dress-g-01.jpg" alt="Handmade white occasion gown with a dramatic feather detail">
+          </div>
+          <div class="hero-stamp" aria-label="A little piece of you, in every stitch">
+            <span>A LITTLE PIECE OF YOU</span>
+            <strong>in every<br>stitch</strong>
+            <span>✳ &nbsp; MADE BY HAND &nbsp; ✳</span>
+          </div>
+          <span class="hero-caption">01 / OCCASIONWEAR</span>
+        </div>
+        <span class="hero-scribble" aria-hidden="true">✳</span>
+      </section>
+
+      <section class="collection section-wrap" id="collection">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> A FEW FAVOURITES</p>
+            <h2>Pieces with <em>personality.</em></h2>
+          </div>
+          <p class="section-intro">From everyday favourites to once-in-a-lifetime looks, find a piece that feels like it was made just for you.</p>
+        </div>
+
+        <div class="collection-toolbar">
+          <div class="filters" role="group" aria-label="Filter pieces by category">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All pieces</button>
+            <button class="filter-button" type="button" data-filter="traditional" aria-pressed="false">Traditional</button>
+            <button class="filter-button" type="button" data-filter="occasion" aria-pressed="false">Occasionwear</button>
+            <button class="filter-button" type="button" data-filter="everyday" aria-pressed="false">Schoolwear</button>
+            <button class="filter-button" type="button" data-filter="accessories" aria-pressed="false">Accessories</button>
+          </div>
+          <span class="piece-count" id="piece-count" aria-live="polite"></span>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="price-note">Prices shown are starting estimates in ZAR. Your final quote depends on fabric, fit, and finishing details.</p>
+      </section>
+
+      <dialog class="product-dialog" id="product-dialog" aria-labelledby="product-dialog-title">
+        <button class="dialog-close product-dialog-close" type="button" aria-label="Close product details">&times;</button>
+        <div class="product-dialog-layout">
+          <div class="gallery">
+            <div class="gallery-main">
+              <img id="product-dialog-main-image" src="" alt="">
+            </div>
+            <p class="gallery-hint">Choose a photo to see another view of this piece</p>
+            <div class="gallery-thumbnails" id="product-dialog-thumbnails" aria-label="Product photos"></div>
+          </div>
+          <div class="product-dialog-details">
+            <p class="eyebrow"><span aria-hidden="true"></span><span id="product-dialog-category">COLLECTION</span></p>
+            <h2 id="product-dialog-title">Piece details</h2>
+            <p class="product-dialog-description" id="product-dialog-description"></p>
+            <p class="product-dialog-price" id="product-dialog-price"></p>
+            <p class="product-dialog-note">Starting price. Final quote depends on fabric, fit, and finishing details.</p>
+            <button class="button button-dark" id="product-dialog-enquire" type="button">Ask about this piece <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+      </dialog>
+
+      <section class="story" id="story">
+        <div class="story-image">
+          <img src="img/dress-ab-01.jpg" alt="A colourful handmade dress, designed to celebrate its wearer" loading="lazy">
+          <span class="image-label">YOUR IDEA, OUR HANDS</span>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow eyebrow-light"><span></span> THE HEART OF THE WORK</p>
+          <h2>Not just made.<br><em>Made for you.</em></h2>
+          <p>Every body is different. Every story is, too. We bring your ideas to life with thoughtful details, a personal fit, and the kind of care you can feel in every stitch.</p>
+          <a class="text-link" href="#contact">Tell us what you have in mind <span aria-hidden="true">↗</span></a>
+          <span class="story-flower" aria-hidden="true">✳</span>
+        </div>
+      </section>
+
+      <section class="process section-wrap">
+        <p class="eyebrow"><span></span> FROM FIRST IDEA TO FINAL FIT</p>
+        <div class="process-grid">
+          <article>
+            <span class="process-number">01</span>
+            <h3>Tell us your idea</h3>
+            <p>Share the piece you love, a photo, or just the feeling you want it to have.</p>
+          </article>
+          <article>
+            <span class="process-number">02</span>
+            <h3>Make it yours</h3>
+            <p>We’ll talk through your fabric, fit, details, and a clear price before we begin.</p>
+          </article>
+          <article>
+            <span class="process-number">03</span>
+            <h3>Wear it proudly</h3>
+            <p>Your finished piece is made with care, ready for your next big or everyday moment.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-inner">
+          <p class="eyebrow eyebrow-light"><span></span> YOUR NEXT FAVOURITE STARTS HERE</p>
+          <h2>Let’s make<br><em>something yours.</em></h2>
+          <p>Have an occasion coming up, or an idea you can’t stop thinking about? We’d love to hear it.</p>
+          <a class="button button-light" href="#collection">Find your inspiration <span aria-hidden="true">↗</span></a>
+          <span class="contact-flower" aria-hidden="true">✳</span>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/27713751901?text=Hello%20Mimshack%20Atelier!%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with Mimshack Atelier on WhatsApp">
+      <span class="whatsapp-float-icon" aria-hidden="true">☎</span>
+      <span>WhatsApp us</span>
+    </a>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#home">
+        <span class="wordmark-icon" aria-hidden="true">
+          <img src="img/mimshack-logo.png" alt="Mimshack Brand logo" width="350" height="auto">
+        </span>
+        <span>MIMSHACK <small>TAILORED</small></span>
+      </a>
+      <p>Thoughtfully sewn. Made to feel like you.</p>
+      <a class="back-to-top" href="#home">Back to top ↑</a>
+      <span class="copyright">© <span id="current-year"></span> Mimshack TAILORED</span>
+    </footer>
+
+    <dialog class="enquiry-dialog" id="enquiry-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close enquiry-dialog-close" type="button" aria-label="Close enquiry">&times;</button>
+      <p class="eyebrow"><span></span> MADE JUST FOR YOU</p>
+      <h2 id="dialog-title">Ask about this piece</h2>
+      <p class="dialog-piece" id="dialog-piece"></p>
+      <p class="dialog-copy">To get started, send us the piece name and your preferred contact details. Add any sizing, colour, or fabric ideas too.</p>
+      <label for="enquiry-message">Your enquiry</label>
+      <textarea id="enquiry-message" rows="5"></textarea>
+      <button class="button button-dark dialog-copy-button" id="copy-enquiry" type="button">Copy enquiry <span aria-hidden="true">↗</span></button>
+      <a class="button button-whatsapp" id="whatsapp-enquiry" href="https://wa.me/27713751901" target="_blank" rel="noopener noreferrer">Continue on WhatsApp · 071 375 1901 <span aria-hidden="true">↗</span></a>
+      <p class="whatsapp-note">Your enquiry will be ready in WhatsApp. Tap Send there to message us.</p>
+      <p class="copy-feedback" id="copy-feedback" role="status"></p>
+    </dialog>
+  </body>
+</html>
